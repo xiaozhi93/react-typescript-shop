@@ -1,0 +1,1 @@
+export let AUTH_REGISTER = "AUTH_REGISTER"
