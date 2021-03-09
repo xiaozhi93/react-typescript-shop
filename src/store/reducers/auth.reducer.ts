@@ -1,4 +1,4 @@
-import { AuthUnionActionType, SIGNIN } from "../actions/auth.action";
+import { AuthUnionActionType, SIGNIN, SIGNIN_FAIL, SIGNIN_SUCCESS } from "../actions/auth.action";
 
 
 export interface AuthState {
@@ -19,13 +19,30 @@ const intialState: AuthState = {
 export default function authReducer(state = intialState, action: AuthUnionActionType) {
   switch (action.type) {
     case SIGNIN:
-        console.log('进入reducer')
         return {
           ...state,
           signin: {
             loaded: false,
             success: false,
             message: "",
+          },
+        }
+    case SIGNIN_SUCCESS:
+        return {
+          ...state,
+          signin: {
+            loaded: true,
+            success: true,
+            message: ""
+          }
+        }
+    case SIGNIN_FAIL:
+        return {
+          ...state,
+          signin: {
+            loaded: true,
+            success: false,
+            message: ''
           },
         }
     default:
