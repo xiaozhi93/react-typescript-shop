@@ -9,6 +9,8 @@ const Register = () => {
   const onFinish = (values: SignupPayload) => {
     dispatch(signup(values)) 
   }
+  // 注册成功
+  // 注册失败
   return (
     <Layout title="登录" subTitle="嘿, 小伙伴, 立即登录到拉钩电商系统吧">
       <Form onFinish={onFinish}>

@@ -55,6 +55,14 @@ export interface SignupAction {
   payload: SigninPayload
 }
 
+export interface SignupSuccessAction {
+  type: typeof SIGNIN_SUCCESS
+}
+
+export interface SignupFailAction {
+  type: typeof SIGNIN_FAIL
+}
+
 export const signup = (payload: SigninPayload) : SignupAction => ({
   type: SIGNUP,
   payload
