@@ -10,7 +10,7 @@ function* handleSignin(action: SigninAction) {
       action.payload
     )
     // 登录成功
-    localStorage.setItem("jwt", JSON.stringify(response.data.token))
+    localStorage.setItem("jwt", JSON.stringify(response.data))
     yield put(signinSuccess())
   } catch (error) { // catch 为any或者unknow类型
     // 登录失败
