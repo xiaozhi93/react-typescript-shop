@@ -9,4 +9,6 @@
 8. 配置开发环境及生成环境变量
 9. 配置redux开发调试
 
-
+## FQA
+如何声明process.env
+process.env.REACT_APP_BASE_API_URL
