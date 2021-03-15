@@ -44,6 +44,7 @@ export const signinFail = (message: string): SigninFailAction => ({
 export let SIGNUP = "SIGNUP"
 export let SIGNUP_SUCCESS = "SIGNUP_SUCCESS"
 export let SIGNUP_FAIL = "SIGNUP_FAIL"
+export let RESET_SIGNUP = "RESET_SIGNUP"
 export interface SignupPayload {
   name: string
   password: string
@@ -56,15 +57,33 @@ export interface SignupAction {
 }
 
 export interface SignupSuccessAction {
-  type: typeof SIGNIN_SUCCESS
+  type: typeof SIGNUP_SUCCESS
 }
 
 export interface SignupFailAction {
-  type: typeof SIGNIN_FAIL
+  type: typeof SIGNUP_FAIL,
+  message: string
+}
+
+export interface ResetSignupAction {
+  type: typeof RESET_SIGNUP
 }
 
 export const signup = (payload: SigninPayload) : SignupAction => ({
   type: SIGNUP,
   payload
 })
-export type AuthUnionActionType = SigninAction | SigninSuccessAction | SigninFailAction
+export const signupSuccess = (): SignupSuccessAction => ({
+  type: SIGNUP_SUCCESS
+})
+
+export const signupFail = (message: string): SignupFailAction => ({
+  type: SIGNUP_FAIL,
+  message
+})
+
+export const resetSignup = (): ResetSignupAction => ({
+  type: RESET_SIGNUP
+})
+
+export type AuthUnionActionType = SigninAction | SigninSuccessAction | SigninFailAction | SignupAction | SignupSuccessAction | SignupFailAction | ResetSignupAction

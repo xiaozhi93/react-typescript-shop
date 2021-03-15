@@ -11,6 +11,7 @@ import PrivateRoute from './components/auth/privateRoute'
 import AdminRoute from './components/auth/adminRoute'
 import UserDashborad from './views/dashborad/UserDashborad'
 import AdminDashborad from './views/dashborad/AdminDashborad'
+import Product from './views/product'
 
 const  Routes = () => {
   // exact 全匹配
@@ -19,6 +20,7 @@ const  Routes = () => {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/shop" component={Shop} />
+        <Route path="/product/:id" component={Product} />;
         <Route path="/cart" component={Cart} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />

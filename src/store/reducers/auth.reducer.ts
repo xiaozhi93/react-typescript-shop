@@ -1,8 +1,13 @@
-import { AuthUnionActionType, SIGNIN, SIGNIN_FAIL, SIGNIN_SUCCESS } from "../actions/auth.action";
+import { AuthUnionActionType, RESET_SIGNUP, SIGNIN, SIGNIN_FAIL, SIGNIN_SUCCESS, SIGNUP, SIGNUP_FAIL, SIGNUP_SUCCESS } from "../actions/auth.action";
 
 
 export interface AuthState {
   signin: {
+    loaded: boolean
+    success: boolean
+    message: string
+  },
+  signup: {
     loaded: boolean
     success: boolean
     message: string
@@ -13,6 +18,11 @@ const intialState: AuthState = {
     loaded: false,
     success: false,
     message: ''
+  },
+  signup: {
+    loaded: false,
+    success: false,
+    message: ""
   }
 }
 // 接受初始状态和action对象
@@ -45,6 +55,40 @@ export default function authReducer(state = intialState, action: AuthUnionAction
             message: ''
           },
         }
+    case SIGNUP:
+      return {
+        ...state,
+        signup: {
+          loaded: false,
+          success: false
+        }
+      }
+    case SIGNUP_SUCCESS:
+      return {
+        ...state,
+        signup: {
+          loaded: true,
+          success: true
+        }
+      }
+    case SIGNUP_FAIL:
+      return {
+        ...state,
+        signup: {
+          loaded: true,
+          success: false,
+          message: action.message //  SignupFailAction
+        }
+      }
+    case RESET_SIGNUP:
+      return {
+        ...state,
+        signup: {
+          loaded: false,
+          success: false,
+          message: ""
+        }
+      }
     default:
       return state
   }

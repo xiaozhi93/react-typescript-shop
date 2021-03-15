@@ -12,13 +12,16 @@ const CartItem: FC<CartItemProps> = ({ product, setCart}) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let count = parseInt(event.target.value)
     setCount(count)
-    updateGoodsToCart(product, count)
+    // 修改数据库数据, 修改本地装填;
+    setCart(updateGoodsToCart(product, count))
+
   }
   return (
     <tr className="ant-table-row">
       <td className="ant-table-cell">
         <Image
           width={120}
+          preview={false}
           src={`${process.env.REACT_APP_BASE_API_URL}/product/photo/${product._id}`}
         />
       </td>

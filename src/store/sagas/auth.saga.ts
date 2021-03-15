@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import { put, takeEvery } from 'redux-saga/effects'
-import { SIGNIN, SigninAction, signinFail, signinSuccess, SIGNUP, SignupAction } from '../actions/auth.action'
+import { SIGNIN, SigninAction, signinFail, signinSuccess, SIGNUP, SignupAction, signupFail, signupSuccess } from '../actions/auth.action'
 import { Jwt } from '../models/auth.model'
 
 function* handleSignin(action: SigninAction) {
@@ -19,7 +19,12 @@ function* handleSignin(action: SigninAction) {
 }
 
 function* handleSignup(action: SignupAction) {
-  
+  try {
+    yield axios.post(`${process.env.REACT_APP_BASE_API_URL}/signup`, action.payload)
+    yield put(signupSuccess())
+  } catch (error) {
+    yield put(signupFail(error.response.data.error))
+  }
 }
 
 export default function* AuthSaga() {
