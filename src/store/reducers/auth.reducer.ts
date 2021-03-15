@@ -77,7 +77,7 @@ export default function authReducer(state = intialState, action: AuthUnionAction
         signup: {
           loaded: true,
           success: false,
-          // message: action.message // (parameter) action: SignupFailAction
+          message: action.message // (parameter) action: SignupFailAction
         }
       }
     case RESET_SIGNUP:

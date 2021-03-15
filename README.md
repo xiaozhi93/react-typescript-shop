@@ -9,3 +9,6 @@
 8. 配置开发环境及生成环境变量
 9. 配置redux开发调试
 
+
+## FQA
+定义action的类型必须要用const, 不然在reducer中action不会有提示

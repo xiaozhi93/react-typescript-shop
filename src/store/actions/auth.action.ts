@@ -1,9 +1,9 @@
 /**
  * 登录
  */
-export let SIGNIN = "SIGNIN"
-export let SIGNIN_SUCCESS = "SIGNIN_SUCCESS"
-export let SIGNIN_FAIL = "SIGNIN_FAIL"
+export const SIGNIN = "SIGNIN"
+export const SIGNIN_SUCCESS = "SIGNIN_SUCCESS"
+export const SIGNIN_FAIL = "SIGNIN_FAIL"
 
 export interface SigninPayload {
   email: string
@@ -41,10 +41,10 @@ export const signinFail = (message: string): SigninFailAction => ({
 /**
  * 注册
  */
-export let SIGNUP = "SIGNUP"
-export let SIGNUP_SUCCESS = "SIGNUP_SUCCESS"
-export let SIGNUP_FAIL = "SIGNUP_FAIL"
-export let RESET_SIGNUP = "RESET_SIGNUP"
+export const SIGNUP = "SIGNUP"
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS"
+export const SIGNUP_FAIL = "SIGNUP_FAIL"
+export const RESET_SIGNUP = "RESET_SIGNUP"
 export interface SignupPayload {
   name: string
   password: string
