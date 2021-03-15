@@ -12,3 +12,5 @@
 ## FQA
 如何声明process.env
 process.env.REACT_APP_BASE_API_URL
+declare const ButtonTypes: ["default", "primary", "ghost", "dashed", "link", "text"];
+export declare type ButtonType = typeof ButtonTypes[number];
