@@ -16,7 +16,7 @@ const Home = () => {
     dispatch(queryProduct('createdAt'))
   }, [])
   return (
-    <Layout title="拉勾电商" subTitle="欢迎来到拉勾电商, 尽情享受吧">
+    <Layout title="淘宝电商" subTitle="欢迎来到淘宝电商, 尽情享受吧">
       <Title level={5}>最新上架</Title>
       <Row gutter={[16, 16]}>
         {

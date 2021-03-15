@@ -12,7 +12,7 @@ const Register = () => {
   // 注册成功
   // 注册失败
   return (
-    <Layout title="登录" subTitle="嘿, 小伙伴, 立即登录到拉钩电商系统吧">
+    <Layout title="登录" subTitle="嘿, 小伙伴, 立即登录到淘宝电商系统吧">
       <Form onFinish={onFinish}>
         <Form.Item name="name" label="昵称">
           <Input />
