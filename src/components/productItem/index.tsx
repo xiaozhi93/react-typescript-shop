@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row, Typography } from 'antd';
+import { Button, Card, Col, Row, Typography, Image } from 'antd';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../store/models/product.model';
@@ -41,9 +41,9 @@ const ProductItem: FC<ProductItemProps> = ({ product, showViewProduct = true, sh
     <Card
       hoverable
       cover={
-        <img
-          alt={product.name}
+        <Image
           src={`${process.env.REACT_APP_BASE_API_URL}/product/photo/${product._id}`}
+          preview={false}
         />
       }
       actions={showButtons()}
