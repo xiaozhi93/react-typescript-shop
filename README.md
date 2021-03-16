@@ -12,3 +12,10 @@
 
 ## FQA
 定义action的类型必须要用const, 不然在reducer中action不会有提示
+
+## 拓展process.env接口
+declare namespace NodeJS {
+export interface ProcessEnv {
+  REACT_APP_BASE_API_URL: string
+  }
+}
